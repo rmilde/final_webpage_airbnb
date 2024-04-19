@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York AirBnB Price Study</title>
+    <link href="style_finalwebpage.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <h1> New York AirBnB Price Analysis</h1>
+
+    <h3>Introduction:</h3>
+
+    <p>Airbnb is on the rise. It is increasingly being turned to for travel bookings compared to traditional hotel options.
+        College students often use the company to plan trips with friends and try to cut down on travel costs.
+        As college students ourselves, we were interested in what contributes to the varying prices of different houses advertised on AirBnB.
+        Why is one house much more expensive than another house? What specific characteristics of the house may be the cause of it's higher price?
+        This lead to the creation of the following data visualizations to explore this topic and see if anything could be uncovered from AirBinB data from New York.
+    </p>
+
+    <div class = 'container'>
+        <div class = 'image'>
+            <!-- <iframe src="histogram/index.html" width="100%" height="400px" frameborder="0"></iframe>-->
+            <img src="first_graph.jpeg" width="90%" height="400px" frameborder="0"></img>
+            
+        </div>
+        <div class = 'text'>
+            <p> As seen in this graph, from <a href="https://www.statista.com/chart/23520/number-of-nights-and-experiences-booked-on-airbnb/">Statista.com</a>
+                AirBnB bookings have recovered from the pandemic and is generally on an upward trend from year to year. 
+            </p>
+            <p> More information about the company can be found at their website: <a href="https://www.airbnb.com">airbnb.com.</a>
+            </p>
+        </div>      
+        
+        
+    </div>
+
+    <p>The data we used was found on Kaggle, but was originally from AirBnB itself. There were originally 102,599 data points in the dataframe and 26 different attributes.
+        We took a random sample of 3,000 of these houses to anaylsis further. A couple Nan values were filled in with the column average. The characteristics we specifically 
+        explored are shown below:
+    </p>
+
+    <h3>Data Attributes</h3>
+
+        <div class="center">
+        <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">lat</th>
+                <th class="tg-0lax">The World Geodetic System (WGS84) projection for latitude
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">long</td>
+                <td class="tg-0lax">The World Geodetic System (WGS84) projection for longitude
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">price</td>
+                <td class="tg-0lax">Daily price in local currency</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">service fee</td>
+                <td class="tg-0lax">The service fee charged in the price of the booking</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">construction year</td>
+                <td class="tg-0lax">The year the house was built</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">availability 365</td>
+                <td class="tg-0lax">avaliability_x; The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">review rate number</td>
+                <td class="tg-0lax">The number of reviews the listing has
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">room type</td>
+                <td class="tg-0lax">One of four options: Entire place, Private room, Hotel room, or Shared room</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">neighborhood</td>
+                <td class="tg-0lax">The name of the neighborhood the house is located in </td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">name</td>
+                <td class="tg-0lax"> Name of the listing</td>
+              </tr>
+            </tbody>
+            </table>
+        </div>
+
+
+        <h3>Overview of the Airbnb Listings:</h3>
+        
+        <div class = 'container'>
+            </div>
+        <iframe src="airbnb_map.html" width="85%" height="550px" frameborder="0"></iframe>
+
+        <div class = 'text'>
+                <p> This is an interactive map showing the different neighborhood groups (boroughs) in New York City and the prices of the airbnbs from
+                    the dataset. The map shows the names of the airbnbs as well as the attributes 'neighborhood group','neighborhood', 'price', 'service 
+                    fee', 'room type', 'construction year', and 'review rate number'. From this map, there are significantly more airbnbs located in 
+                    Manhattan that the rest of the boroughs. Throughout each of the boroughs, the prices flucuate as there are no specific clusters where
+                    there are airbnbs that are vastly more expensive than others.
+
+            </p>
+        </div>
+            </div>            
+        </div>
+        
+        <iframe src="review_rate.html" width="85%" height="550px" frameborder="0"></iframe>
+
+        <div class = 'text'>
+            <div class = 'text'>
+                <p> This is a side-by-side boxplot that displays the distribution of airbnb review rates. The review rates are on a scale from 1 to 5.
+                    With the exception of the airbnbs rated 1 out of 5, all of the values (2-5) have a median price of at least $600. The airbnb with
+                    the highest price is rated 3 out of 5 and costs $1199 per night.The rating with the largest interquartile range and the most variety
+                    of prices 2 out of 5, which has an interquartile range of 589. Consquently, the review rate does not determine how expensive an airbnb
+                    costs. 
+                </p>
+            </div>
+
+            
+        <iframe src="room_type.html" width="85%" height="550px" frameborder="0"></iframe>
+        <div class = 'text'></div>
+            <div class = 'text'>
+                <p> This scatterplot illustrates the relationship between an Airbnb's price and the type of room that someone can book, which can be a
+                    an entire home or apartment, hotel room, private room, or shared room. Each of these values vary with the price. There are only 3 
+                    data points that are hotels, which tend to be cheaper per night than the other rooms. The most expensive hotel is $751 per night and 
+                    the least expensive is $164 per night. The two least expensive spaces are both $50 per night, which are an entire home and a
+                    private room respectively. As a result, the type of room a person books does not necessarily determine how expensive it is.
+
+                </p>
+            </div>            
+        </div>
+
+        <div class = 'center'>
+            <img src="Daily_Price_by_Construction_Year.png" width="100%" height="500px" frameborder="0"></img>
+        </div>
+
+        <p>
+           This side-by-side boxplot shows the daily rental price across different construction year groups.
+           All of the houses were built post 2000, and are seperated into five buckets. Most of the boxes have means just over 600, 
+           while the newest houses have a slightly higher average closer to 700. However, it is not a big enough difference to have 
+           any real statitsical significanse. All of the boxes have a larger amount of overlap. They all range from around 50 dollars 
+           a night to 1200 dollars a night. This shows that how old or new a house/apartment is does not contribution to its rental price
+           and both expensive and more budget friendly options can be found across any contruction year group. 
+        </p>
+
+        <p>We have also created a scatter plot to compare how price relates to the booking availibitly of the house. 
+        </p>
+
+        <div class = 'center'>
+            <iframe src="index_scatterplot.html" width="85%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <p>
+            This scatterplot shows the relationship between daily rental price and availibitly over the next year, i.e. next 365 days. 
+            The houses are relateively evenly spread out across the graph, but it is less dense in the middle. There are two clear lines at 
+            365 days and 0 days, meaning most houses are either completely booked or completely free. 
+
+        </p>
+ 
+        <div class = 'center'>
+            <iframe src="neighborhood_averages.html" width="100%" height="600px"></iframe>
+        </div>
+
+            <p>
+                This interactive bar plot showcases the averages prices of Airbnbs in each neighborhood of New York City. The highest average prices
+                of rooms are in Brooklyn, while the lowest average price is in Queens. The most expensive room in Brooklyn in $1135 per nigh and the 
+                cheapest room in Queens is $59 per night. It is worth noting that there are significantly less Airbnbs located in neighborhoods of 
+                Staten Island (7), than the other groups, which have at least 20 different neighborhoods. Therefore, there is more variation in the
+                prices where there are more neighborhoods included.
+            </p>
+
+        <h3>Conclusion:</h3>
+
+        <p>
+            In this visualization analysis, we try to explore the factors that could 
+            influence the rental price of a AirBnB booking. We also how looked at how booked up the range of 
+            prices were. The main finding was that neighborhood is the most important factor in how expensive a booking will be.
+            Thus, when making travel plans the most important varaible for one's budgeting is to decide where they are going, which neighborhood
+            they want to stay in, and how important it is to them that thei accomadations are close to where they will spend time during the day.
+            With this insight, airbnb bookings can be made with greater knowledge and prowess. 
+
+        </p>
+        <p>
+            Since this data is only from New York it cannot be generalised to the rest of the country. 
+            There is still additional work needed to truly uncover the differences in rental prices, such as the difference between houses in the same neighborhood, but this portfolio 
+            provides a solid ground work.
+        </p>
+
+        <p>If you are interested in the project and want to share more
+            opinions or resource about the project, please contact:
+            Olivia Mintz (mintz.o@northeastern.edu) or Rebecca Milde (milde.r@northeastern.edu)
+        </p>
+
+</body>
+</html>
